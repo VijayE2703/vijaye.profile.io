@@ -1,383 +1,627 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Vijay E | Portfolio</title>
-
-  <!-- Google Fonts: Roboto for that standard Tech look -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-
-  <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-
-  <style>
-    :root {
-      --primary-blue: #1a73e8;
-      /* Google Blue */
-      --hover-blue: #1557b0;
-      --surface-color: #ffffff;
-      --bg-color: #ffffff;
-      --text-primary: #202124;
-      /* Google Dark Grey */
-      --text-secondary: #5f6368;
-      --border-color: #dadce0;
-      --card-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0.3), 0 1px 3px 1px rgba(60, 64, 67, 0.15);
-      --card-hover-shadow: 0 4px 8px 3px rgba(60, 64, 67, 0.15);
-    }
-
-    body {
-      font-family: 'Roboto', -apple-system, BlinkMacSystemFont, sans-serif;
-      background-color: var(--bg-color);
-      color: var(--text-primary);
-      -webkit-font-smoothing: antialiased;
-    }
-
-    h1,
-    h2,
-    h3,
-    h5,
-    .navbar-brand {
-      font-weight: 400;
-      /* Cleaner, lighter weigh common in big tech */
-      color: var(--text-primary);
-    }
-
-    h1 {
-      font-weight: 400;
-      letter-spacing: -0.5px;
-    }
-
-    /* Navbar - Clean White Sticky */
-    .navbar {
-      background-color: rgba(255, 255, 255, 0.98);
-      border-bottom: 1px solid var(--border-color);
-      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-      /* Subtle shadow */
-      padding-top: 12px;
-      padding-bottom: 12px;
-    }
-
-    .navbar-brand {
-      font-weight: 500;
-      font-size: 1.4rem;
-      color: var(--text-primary) !important;
-      display: flex;
-      align-items: center;
-    }
-
-    .navbar-brand span {
-      color: var(--text-primary);
-    }
-
-    .nav-link {
-      color: var(--text-secondary) !important;
-      font-weight: 500;
-      font-size: 0.95rem;
-      margin-left: 15px;
-      transition: color 0.2s;
-    }
-
-    .nav-link:hover,
-    .nav-link.active {
-      color: var(--primary-blue) !important;
-    }
-
-    /* Hero */
-    .hero {
-      min-height: 85vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-    }
-
-    .hero-btn {
-      background-color: var(--primary-blue);
-      color: white;
-      border: none;
-      padding: 10px 24px;
-      font-size: 0.95rem;
-      font-weight: 500;
-      border-radius: 4px;
-      /* Slightly rounded, Google style */
-      transition: background-color 0.2s, box-shadow 0.2s;
-      text-decoration: none;
-      display: inline-block;
-      margin-top: 20px;
-    }
-
-    .hero-btn:hover {
-      background-color: var(--hover-blue);
-      color: white;
-      box-shadow: 0 1px 3px 1px rgba(60, 64, 67, 0.15);
-    }
-
-    /* Sections */
-    section {
-      padding: 80px 0;
-    }
-
-    .section-title {
-      font-size: 2.2rem;
-      margin-bottom: 40px;
-      text-align: center;
-      font-weight: 400;
-    }
-
-    /* Skills - Chips */
-    .chip {
-      display: inline-block;
-      background-color: #f1f3f4;
-      /* Google grey chip color */
-      color: #3c4043;
-      padding: 0 12px;
-      border-radius: 16px;
-      font-size: 0.875rem;
-      height: 32px;
-      line-height: 32px;
-      margin: 6px;
-      border: 1px solid transparent;
-      transition: background-color 0.2s;
-    }
-
-    .chip:hover {
-      background-color: #e8eaed;
-      border-color: #dadce0;
-    }
-
-    /* Projects - Cards */
-    .project-card {
-      background: white;
-      border: 1px solid var(--border-color);
-      border-radius: 8px;
-      /* Standard rounded corners */
-      padding: 24px;
-      height: 100%;
-      cursor: pointer;
-      transition: box-shadow 0.2s, transform 0.2s;
-    }
-
-    .project-card:hover {
-      box-shadow: var(--card-hover-shadow);
-      transform: translateY(-2px);
-      border-color: transparent;
-    }
-
-    .project-title {
-      color: var(--primary-blue);
-      font-size: 1.25rem;
-      font-weight: 500;
-      margin-bottom: 12px;
-    }
-
-    .card-text {
-      color: var(--text-secondary);
-      font-size: 0.95rem;
-      line-height: 1.5;
-    }
-
-    /* Contact */
-    #contact {
-      background-color: #f8f9fa;
-    }
-
-    .contact-link {
-      color: var(--primary-blue);
-      text-decoration: none;
-      font-weight: 500;
-    }
-
-    .contact-link:hover {
-      text-decoration: underline;
-    }
-
-    /* Footer */
-    footer {
-      padding: 24px 0;
-      background: #f1f3f4;
-      color: var(--text-secondary);
-      font-size: 0.85rem;
-      border-top: 1px solid var(--border-color);
-    }
-  </style>
+  <title>Vijay E | Senior Software Developer | ASP.NET & SQL Server Specialist</title>
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Portfolio of Vijay E, Senior Software Developer with 3+ years of experience specializing in full-stack ASP.NET, C#, SQL Server, and enterprise banking/payroll solutions.">
+  <meta name="keywords" content="Vijay E, Software Developer, ASP.NET, C#, SQL Server, Merchant Management, Developer Portfolio, Chennai">
+  <meta name="author" content="Vijay E">
+  
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+  
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  
+  <!-- Main Script -->
+  <script src="script.js" defer></script>
 </head>
-
 <body>
 
+  <!-- Background Ambience -->
+  <div class="ambient-background">
+    <div class="ambient-orb orb-1"></div>
+    <div class="ambient-orb orb-2"></div>
+  </div>
+
   <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg fixed-top">
-    <div class="container">
-      <a class="navbar-brand" href="#home">Vijay<span>.</span>E</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-          <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
-          <li class="nav-item"><a class="nav-link" href="#projects">Work</a></li>
-          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+  <header class="glass-navbar">
+    <div class="container navbar-container">
+      <a href="#home" class="nav-brand">
+        Vijay E <span class="nav-logo-dot"></span>
+      </a>
+      
+      <nav>
+        <ul class="nav-links" id="nav-links">
+          <li><a href="#home" class="active">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#projects">Work</a></li>
+          <li><a href="#contact">Contact</a></li>
         </ul>
+      </nav>
+
+      <div style="display: flex; gap: 12px; align-items: center;">
+        <!-- Theme Toggle -->
+        <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle Theme">
+          <i data-lucide="sun" class="sun-icon"></i>
+          <i data-lucide="moon" class="moon-icon"></i>
+        </button>
+        
+        <!-- Mobile Menu Trigger -->
+        <button id="menu-btn" class="menu-btn" aria-label="Open Menu">
+          <i data-lucide="menu"></i>
+        </button>
       </div>
     </div>
-  </nav>
+  </header>
 
   <!-- Hero Section -->
   <section id="home" class="hero">
     <div class="container">
-      <h1 class="display-3 mb-3">Hi, I'm Vijay</h1>
-      <p class="lead" style="color: var(--text-secondary); font-size: 1.5rem;">Software Developer – Full-Stack ASP.NET (3+ years)</p>
-      <a href="#projects" class="hero-btn me-2">View My Work</a>
-      <a href="Vijay_E_Resume.pdf" class="hero-btn" style="background-color: transparent; color: var(--primary-blue); border: 1px solid var(--primary-blue);">
-        Download Resume
-      </a>
+      <div class="hero-content">
+        <div>
+          <p class="hero-greeting">Welcome to my space</p>
+          <h1 class="hero-title">
+            Hi, I'm <span class="text-gradient">Vijay E</span>
+          </h1>
+          <div class="hero-subtitle">
+            I am a <span class="typed-text"></span>
+          </div>
+          <p class="hero-description">
+            Software Developer with 3+ years of experience engineering transaction-heavy enterprise web applications, merchant management workflows for major banks, and optimized automated background systems. Specializing in ASP.NET and SQL Server databases.
+          </p>
+          <div class="hero-actions">
+            <a href="#projects" class="btn btn-primary">
+              <span>View Projects</span>
+              <i data-lucide="arrow-right"></i>
+            </a>
+            <a href="#contact" class="btn btn-secondary">
+              <span>Get In Touch</span>
+            </a>
+          </div>
+        </div>
+        
+        <!-- Hero Visual/Graphic -->
+        <div class="hero-visual reveal">
+          <div class="about-badge-card">
+            <div class="about-badge-circle">
+              <i data-lucide="code-2"></i>
+            </div>
+            <h4>Full-Stack ASP.NET</h4>
+            <p>Enterprise Applications</p>
+            <div class="project-tags" style="margin-top: 15px; justify-content: center;">
+              <span class="project-tag" style="background: rgba(255,255,255,0.04)">C#</span>
+              <span class="project-tag" style="background: rgba(255,255,255,0.04)">SQL</span>
+              <span class="project-tag" style="background: rgba(255,255,255,0.04)">MVC</span>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- About -->
+  <!-- Metrics Section -->
+  <section class="metrics-section container">
+    <div class="metrics-grid">
+      <div class="glass-card metric-card reveal">
+        <div class="metric-num text-gradient">3+</div>
+        <div class="metric-label">Years of Experience</div>
+      </div>
+      <div class="glass-card metric-card reveal">
+        <div class="metric-num text-gradient">2</div>
+        <div class="metric-label">Enterprise Bank Deployments</div>
+      </div>
+      <div class="glass-card metric-card reveal">
+        <div class="metric-num text-gradient">10+</div>
+        <div class="metric-label">Payment & System APIs</div>
+      </div>
+      <div class="glass-card metric-card reveal">
+        <div class="metric-num text-gradient">100%</div>
+        <div class="metric-label">Automated System Auditing</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
   <section id="about">
     <div class="container">
-      <h2 class="section-title">About Me</h2>
-      <div class="row justify-content-center">
-        <div class="col-lg-8 text-center">
-          <p class="fs-5" style="color: var(--text-secondary); line-height: 1.8;">
-            Software Developer with 3+ years of experience in full-stack ASP.NET development, specializing in
-            merchant management solutions for banking institutions and payroll systems. Proficient in ASP.NET
-            WebForms, MVC, Web API, C#, JavaScript, jQuery, and SQL Server, with hands-on experience in SOAP and
-            RESTful API development, Windows Services, Excel-based bulk onboarding, and Windows IIS deployment.
+      <div class="about-grid">
+        <div class="about-graphics reveal">
+          <!-- Glass Dashboard UI Mockup -->
+          <div class="project-ui-preview" style="max-width: 320px; height: 260px;">
+            <div class="project-ui-header">
+              <span class="ui-dot"></span>
+              <span class="ui-dot"></span>
+              <span class="ui-dot"></span>
+              <div class="ui-address-bar">vijaye.profile.io/dashboard</div>
+            </div>
+            <div class="project-ui-content">
+              <div class="ui-skeleton-line short"></div>
+              <div class="ui-skeleton-line"></div>
+              <div class="ui-skeleton-grid">
+                <div class="ui-skeleton-block">
+                  <i data-lucide="database"></i>
+                </div>
+                <div class="ui-skeleton-block">
+                  <i data-lucide="server"></i>
+                </div>
+                <div class="ui-skeleton-block">
+                  <i data-lucide="cpu"></i>
+                </div>
+              </div>
+              <div class="ui-skeleton-line mid" style="margin-top: 10px;"></div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="reveal">
+          <p class="section-subtitle">My Journey</p>
+          <h2 class="section-main-title">Bridging Engineering & Code</h2>
+          <p class="about-text">
+            Having completed my Bachelor of Engineering in Mechanical Engineering from Anna University in 2019, my analytical mindset led me straight into software development. I found my true calling in structural systems logic, database schemas, and enterprise software engineering.
+          </p>
+          <p class="about-text">
+            Since then, I have spent over 3 years building stable, transaction-safe backend services, bulk-file-processing systems, and payroll engines. I specialize in the Microsoft technology stack (ASP.NET MVC/WebForms, C#, ADO.NET, SQL Server) while bridging modern frontend needs with clean HTML5/CSS3, JavaScript, jQuery, and APIs.
+          </p>
+          
+          <div class="about-highlights">
+            <div class="about-highlight-item">
+              <i data-lucide="shield-check"></i>
+              <span>Transaction-Safe Design</span>
+            </div>
+            <div class="about-highlight-item">
+              <i data-lucide="zap"></i>
+              <span>High Performance SQL Tuning</span>
+            </div>
+            <div class="about-highlight-item">
+              <i data-lucide="refresh-cw"></i>
+              <span>Automated Data Pipelines</span>
+            </div>
+            <div class="about-highlight-item">
+              <i data-lucide="file-spreadsheet"></i>
+              <span>Bulk Document Engine Work</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills">
+    <div class="container">
+      <div style="text-align: center; max-width: 600px; margin: 0 auto 20px;">
+        <p class="section-subtitle">Capabilities</p>
+        <h2 class="section-main-title">Technical Expertise</h2>
+      </div>
+      
+      <div class="skills-grid">
+        <!-- Backend Development -->
+        <div class="glass-card skills-category reveal">
+          <div class="skills-category-header">
+            <i data-lucide="server"></i>
+            <h3 class="skills-category-title">Backend Architecture</h3>
+          </div>
+          <div class="skills-list">
+            <span class="skill-chip">ASP.NET WebForms</span>
+            <span class="skill-chip">ASP.NET MVC 5</span>
+            <span class="skill-chip">ASP.NET Core Web API</span>
+            <span class="skill-chip">Entity Framework (Core)</span>
+            <span class="skill-chip">ADO.NET & LINQ</span>
+            <span class="skill-chip">WCF Services</span>
+            <span class="skill-chip">REST & SOAP Web Services</span>
+            <span class="skill-chip">Dependency Injection</span>
+            <span class="skill-chip">JWT Authentication</span>
+          </div>
+        </div>
+
+        <!-- Languages & Databases -->
+        <div class="glass-card skills-category reveal">
+          <div class="skills-category-header">
+            <i data-lucide="database"></i>
+            <h3 class="skills-category-title">Languages & DB</h3>
+          </div>
+          <div class="skills-list">
+            <span class="skill-chip">C#</span>
+            <span class="skill-chip">T-SQL (SQL Server)</span>
+            <span class="skill-chip">JavaScript (ES6+)</span>
+            <span class="skill-chip">TypeScript</span>
+            <span class="skill-chip">Stored Procedures</span>
+            <span class="skill-chip">Views & Functions</span>
+            <span class="skill-chip">Triggers</span>
+            <span class="skill-chip">Query Optimization</span>
+            <span class="skill-chip">SQL Agent Jobs</span>
+          </div>
+        </div>
+
+        <!-- Frontend & UI -->
+        <div class="glass-card skills-category reveal">
+          <div class="skills-category-header">
+            <i data-lucide="monitor"></i>
+            <h3 class="skills-category-title">Frontend & Styling</h3>
+          </div>
+          <div class="skills-list">
+            <span class="skill-chip">HTML5</span>
+            <span class="skill-chip">CSS3</span>
+            <span class="skill-chip">jQuery</span>
+            <span class="skill-chip">AJAX</span>
+            <span class="skill-chip">Bootstrap</span>
+            <span class="skill-chip">Angular 21</span>
+            <span class="skill-chip">AngularJS</span>
+          </div>
+        </div>
+
+        <!-- DevOps & Services -->
+        <div class="glass-card skills-category reveal">
+          <div class="skills-category-header">
+            <i data-lucide="settings"></i>
+            <h3 class="skills-category-title">Infrastructure & Tools</h3>
+          </div>
+          <div class="skills-list">
+            <span class="skill-chip">IIS Deployment</span>
+            <span class="skill-chip">Windows Services</span>
+            <span class="skill-chip">Visual Studio</span>
+            <span class="skill-chip">VS Code</span>
+            <span class="skill-chip">Git / GitHub</span>
+            <span class="skill-chip">Postman</span>
+            <span class="skill-chip">Swagger API</span>
+            <span class="skill-chip">SVN Version Control</span>
+            <span class="skill-chip">FTP / SMTP Integration</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience Timeline -->
+  <section id="experience">
+    <div class="container">
+      <div style="text-align: center; max-width: 600px; margin: 0 auto 40px;">
+        <p class="section-subtitle">Career Path</p>
+        <h2 class="section-main-title">Professional Experience</h2>
+      </div>
+
+      <div class="timeline">
+        <!-- Senior Software Developer -->
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-header">
+            <div>
+              <h3 class="timeline-role">Senior Software Developer</h3>
+              <div class="timeline-company">Cogent Innovations Pvt Ltd</div>
+            </div>
+            <div class="timeline-date">Jan 2024 – Apr 2026</div>
+          </div>
+          <p class="timeline-desc">
+            Led implementation and optimization features for high-security merchant onboarding pipelines, specifically catering to banking giants like SBI and AXIS Bank. Developed payment terminal activations, transactional rest handlers, automated audit operations, and bulk integrations.
+          </p>
+        </div>
+
+        <!-- Software Engineer -->
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-header">
+            <div>
+              <h3 class="timeline-role">Software Engineer</h3>
+              <div class="timeline-company">Cogent Innovations Pvt Ltd</div>
+            </div>
+            <div class="timeline-date">Sep 2022 – Nov 2023</div>
+          </div>
+          <p class="timeline-desc">
+            Responsible for developing employee attendance modules, payroll processing backends, and MS Access database synchronizations with MS SQL Server databases. Built automated export schedules and customized crystal reports for client administration divisions.
           </p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Skills -->
-  <section id="skills" style="background-color: white;">
-    <div class="container text-center">
-      <h2 class="section-title">Skills & Technologies</h2>
-      <div class="d-flex flex-wrap justify-content-center" style="max-width: 800px; margin: 0 auto;">
-        <!-- Languages -->
-        <span class="chip">C#</span>
-        <span class="chip">JavaScript (ES6+)</span>
-        <span class="chip">TypeScript (Entry Level)</span>
-        <span class="chip">T-SQL</span>
-
-        <!-- Backend -->
-        <span class="chip">ASP.NET WebForms</span>
-        <span class="chip">ASP.NET MVC</span>
-        <span class="chip">ASP.NET Web API</span>
-        <span class="chip">Entity Framework</span>
-        <span class="chip">ADO.NET</span>
-
-        <!-- Frontend -->
-        <span class="chip">HTML5</span>
-        <span class="chip">CSS3</span>
-        <span class="chip">jQuery</span>
-        <span class="chip">AJAX</span>
-        <span class="chip">Bootstrap</span>
-        <span class="chip">AngularJS (Entry Level)</span>
-        <span class="chip">Angular (Entry Level)</span>
-
-        <!-- Database -->
-        <span class="chip">MS SQL Server</span>
-        <span class="chip">Stored Procedures</span>
-        <span class="chip">Query Optimization</span>
-
-        <!-- DevOps & Tools -->
-        <span class="chip">Linux Ubuntu</span>
-        <span class="chip">Nginx</span>
-        <span class="chip">IIS</span>
-        <span class="chip">Domain Management</span>
-        <span class="chip">SSL/HTTPS</span>
-        <span class="chip">Server Deployment</span>
-        <span class="chip">Visual Studio</span>
-        <span class="chip">Git</span>
-        <span class="chip">Postman</span>
-        <span class="chip">SVN</span>
-        <span class="chip">Windows Services</span>
-        <span class="chip">SOAP APIs</span>
-        <span class="chip">RESTful APIs</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- Projects -->
-  <section id="projects" style="background-color: #f8f9fa;">
+  <!-- Projects Showcase -->
+  <section id="projects">
     <div class="container">
-      <h2 class="section-title">Professional Experience</h2>
-      <div class="row g-4">
+      <div style="text-align: center; max-width: 600px; margin: 0 auto 40px;">
+        <p class="section-subtitle">Portfolios of Work</p>
+        <h2 class="section-main-title">Featured Projects</h2>
+      </div>
 
-        <div class="col-md-4">
-          <div class="project-card">
-            <h5 class="project-title">Merchant Management System (MMS) – Cogent Innovations</h5>
-            <p class="card-text">
-              Full-stack ASP.NET WebForms Merchant Management System used by SBI and AXIS Bank for merchant acquisition
-              and onboarding, with maker-checker workflows, Excel-based bulk onboarding, WCF RESTful APIs, and
-              integrations with PhonePe, BharatPe, Paytm, OMA Emirates, Easebuzz, EPH, and TMS.
+      <div class="projects-grid">
+        <!-- Project 1: MMS -->
+        <div class="glass-card project-show-card reveal">
+          <div class="project-visual">
+            <div class="project-visual-accent"></div>
+            <!-- Interactive UI Elements Inside -->
+            <div class="project-ui-preview">
+              <div class="project-ui-header">
+                <span class="ui-dot"></span>
+                <span class="ui-dot"></span>
+                <span class="ui-dot"></span>
+                <div class="ui-address-bar">sbi-mms.internal/merchants</div>
+              </div>
+              <div class="project-ui-content">
+                <div class="ui-skeleton-line short"></div>
+                <div class="ui-skeleton-line"></div>
+                <div class="ui-skeleton-grid">
+                  <div class="ui-skeleton-block" style="background: rgba(16, 185, 129, 0.08); border-color: rgba(16, 185, 129, 0.3);">
+                    <i data-lucide="check-circle" style="color: #10b981;"></i>
+                  </div>
+                  <div class="ui-skeleton-block" style="background: rgba(245, 158, 11, 0.08); border-color: rgba(245, 158, 11, 0.3);">
+                    <i data-lucide="alert-triangle" style="color: #f59e0b;"></i>
+                  </div>
+                  <div class="ui-skeleton-block">
+                    <i data-lucide="users"></i>
+                  </div>
+                </div>
+                <div class="ui-skeleton-line mid"></div>
+              </div>
+            </div>
+          </div>
+          <div class="project-detail-content">
+            <div class="project-badge">Banking & Finance</div>
+            <h3 class="project-name">Merchant Management System (MMS)</h3>
+            <p class="project-desc">
+              A comprehensive system designed for **State Bank of India (SBI)** and **AXIS Bank** to handle merchant registration, device onboarding, and payment processing triggers.
             </p>
+            <ul class="project-bullets">
+              <li>
+                <i data-lucide="check"></i>
+                <span>**Maker-Checker Pipeline**: Structured validation controls to prevent onboarding errors.</span>
+              </li>
+              <li>
+                <i data-lucide="check"></i>
+                <span>**API integrations**: WCF REST services linking payment providers (PhonePe, BharatPe, Paytm, Easebuzz).</span>
+              </li>
+              <li>
+                <i data-lucide="check"></i>
+                <span>**Secure Channels**: SSL/TLS integration communicating with Electronic Payment Hub (EPH) and Terminal Management System (TMS).</span>
+              </li>
+              <li>
+                <i data-lucide="check"></i>
+                <span>**Bulk Engine**: Custom parsing libraries handling thousands of Excel records on upload.</span>
+              </li>
+            </ul>
+            <div class="project-tags">
+              <span class="project-tag">ASP.NET WebForms</span>
+              <span class="project-tag">C#</span>
+              <span class="project-tag">WCF Services</span>
+              <span class="project-tag">SQL Server</span>
+              <span class="project-tag">IIS Hosting</span>
+            </div>
           </div>
         </div>
 
-        <div class="col-md-4">
-          <div class="project-card">
-            <h5 class="project-title">Attendance & Payroll Management – Pace Solution</h5>
-            <p class="card-text">
-              ASP.NET MVC–based Attendance and Payroll Management System with leave management, payroll processing,
-              canteen billing, MS Access to SQL Server synchronization, automated data export/FTP via Windows Task
-              Scheduler, and SAP Crystal Reports for analytics and payroll reporting.
+        <!-- Project 2: Payroll and Attendance -->
+        <div class="glass-card project-show-card reveal">
+          <div class="project-visual">
+            <div class="project-visual-accent" style="background: linear-gradient(135deg, #06b6d4 0%, #3b82f6 100%);"></div>
+            <!-- Interactive UI Elements Inside -->
+            <div class="project-ui-preview">
+              <div class="project-ui-header">
+                <span class="ui-dot"></span>
+                <span class="ui-dot"></span>
+                <span class="ui-dot"></span>
+                <div class="ui-address-bar">payroll.local/attendance</div>
+              </div>
+              <div class="project-ui-content">
+                <div class="ui-skeleton-line"></div>
+                <div class="ui-skeleton-line short"></div>
+                <div class="ui-skeleton-grid" style="grid-template-columns: 2fr 1fr;">
+                  <div class="ui-skeleton-block">
+                    <i data-lucide="calendar"></i>
+                  </div>
+                  <div class="ui-skeleton-block">
+                    <i data-lucide="dollar-sign"></i>
+                  </div>
+                </div>
+                <div class="ui-skeleton-line mid"></div>
+              </div>
+            </div>
+          </div>
+          <div class="project-detail-content">
+            <div class="project-badge">Corporate Admin</div>
+            <h3 class="project-name">Attendance & Payroll Management System</h3>
+            <p class="project-desc">
+              Enterprise management tool built to handle attendance records, verify leave structures, process payroll computations, and automate backend operations.
             </p>
+            <ul class="project-bullets">
+              <li>
+                <i data-lucide="check"></i>
+                <span>**Cross-DB Sync**: Custom desktop application syncing local eTimeTrackLite MS Access database files with SQL Server.</span>
+              </li>
+              <li>
+                <i data-lucide="check"></i>
+                <span>**Automated FTP pipeline**: Exports reports in background threads and uploads via Windows Task Scheduler.</span>
+              </li>
+              <li>
+                <i data-lucide="check"></i>
+                <span>**Crystal Reports**: Designed and delivered clean payroll spreadsheets, leave calculations, and cafeteria ledger reports.</span>
+              </li>
+            </ul>
+            <div class="project-tags">
+              <span class="project-tag">ASP.NET MVC 5</span>
+              <span class="project-tag">AngularJS</span>
+              <span class="project-tag">MS Access</span>
+              <span class="project-tag">SQL Server</span>
+              <span class="project-tag">Crystal Reports</span>
+            </div>
           </div>
         </div>
 
-        <div class="col-md-4">
-          <div class="project-card">
-            <h5 class="project-title">Deployment, Services & Automation</h5>
-            <p class="card-text">
-              Experience deploying and hosting ASP.NET applications on Windows Server/IIS, configuring application
-              pools and bindings, building Windows Services for background processing, and setting up SQL Agent jobs
-              and scheduled tasks for reliable back-office automation.
+        <!-- Project 3: AssessSmart -->
+        <div class="glass-card project-show-card reveal">
+          <div class="project-visual">
+            <div class="project-visual-accent" style="background: linear-gradient(135deg, #8b5cf6 0%, #d946ef 100%);"></div>
+            <!-- Interactive UI Elements Inside -->
+            <div class="project-ui-preview">
+              <div class="project-ui-header">
+                <span class="ui-dot"></span>
+                <span class="ui-dot"></span>
+                <span class="ui-dot"></span>
+                <div class="ui-address-bar">uatcbtlms.netlify.app</div>
+              </div>
+              <div class="project-ui-content">
+                <div class="ui-skeleton-line short"></div>
+                <div class="ui-skeleton-line"></div>
+                <div class="ui-skeleton-grid" style="grid-template-columns: 1fr 1fr 1fr;">
+                  <div class="ui-skeleton-block" style="background: rgba(139, 92, 246, 0.08); border-color: rgba(139, 92, 246, 0.3);">
+                    <i data-lucide="shield" style="color: #a855f7;"></i>
+                  </div>
+                  <div class="ui-skeleton-block" style="background: rgba(59, 130, 246, 0.08); border-color: rgba(59, 130, 246, 0.3);">
+                    <i data-lucide="file-text" style="color: #3b82f6;"></i>
+                  </div>
+                  <div class="ui-skeleton-block" style="background: rgba(16, 185, 129, 0.08); border-color: rgba(16, 185, 129, 0.3);">
+                    <i data-lucide="key" style="color: #10b981;"></i>
+                  </div>
+                </div>
+                <div class="ui-skeleton-line mid" style="margin-top: 10px;"></div>
+              </div>
+            </div>
+          </div>
+          <div class="project-detail-content">
+            <div class="project-badge">E-Learning & Security</div>
+            <h3 class="project-name">AssessSmart – Online CBT Examination System</h3>
+            <p class="project-desc">
+              A secure, proctored online exam simulator and study material delivery system designed for candidates preparing for competitive exams.
             </p>
+            <ul class="project-bullets">
+              <li>
+                <i data-lucide="check"></i>
+                <span>**Proctored Exam Engine**: Engineered Angular event interceptors enforcing auto-fullscreen mode, blocking Tab/Shift+Tab navigation, disabling right-click actions, and auto-terminating exams on window focus loss.</span>
+              </li>
+              <li>
+                <i data-lucide="check"></i>
+                <span>**CSV Blueprint Parser**: Designed a strict validation parser verifying 7-column bulk questions CSV uploads against defined syllabus blueprints.</span>
+              </li>
+              <li>
+                <i data-lucide="check"></i>
+                <span>**Stateless JWT Security**: Implemented stateless request validation using JSON Web Tokens (JWT) mapped inside secure authorization headers.</span>
+              </li>
+              <li>
+                <i data-lucide="check"></i>
+                <span>**Cloud Hosting**: Hosted the Angular client statically on Netlify (with custom routing redirects) and deployed the ASP.NET Core API on runasp.net cloud hosting connected to MS SQL Server.</span>
+              </li>
+            </ul>
+            <div class="project-tags">
+              <span class="project-tag">Angular</span>
+              <span class="project-tag">ASP.NET Core API</span>
+              <span class="project-tag">EF Core</span>
+              <span class="project-tag">MS SQL Server</span>
+              <span class="project-tag">JWT Authentication</span>
+              <span class="project-tag">Netlify & Runasp.net</span>
+            </div>
           </div>
         </div>
-
       </div>
     </div>
   </section>
 
-  <!-- Contact -->
+  <!-- Contact Section -->
   <section id="contact">
-    <div class="container text-center">
-      <h2 class="section-title">Get In Touch</h2>
-      <div class="mt-4">
-        <p class="fs-5" style="color: var(--text-secondary);">
-          Chennai, Tamil Nadu ·
-          <a href="tel:+919597566839" class="contact-link">+91 9597566839</a>
-        </p>
-        <p class="fs-5" style="color: var(--text-secondary);">
-          Email:
-          <a href="mailto:vijayhn273cs@gmail.com" class="contact-link">vijayhn273cs@gmail.com</a>
-        </p>
-        <div class="mt-4">
-          <a href="https://github.com/VijayE2703" class="contact-link me-3" target="_blank" rel="noopener noreferrer">GitHub</a>
-          <a href="https://www.linkedin.com/in/vijayeprofile" class="contact-link ms-3" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+    <div class="container">
+      <div style="text-align: center; max-width: 600px; margin: 0 auto 40px;">
+        <p class="section-subtitle">Get In Touch</p>
+        <h2 class="section-main-title">Let's Connect</h2>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-info reveal">
+          <p class="contact-info-desc">
+            If you are looking for a reliable, transaction-safe backend engineer, database performance tuner, or ASP.NET developer, let's talk. You can reach out directly via email, phone, or LinkedIn.
+          </p>
+          
+          <div class="contact-methods">
+            <a href="mailto:vijayhn273cs@gmail.com" class="contact-method-card">
+              <div class="contact-method-icon">
+                <i data-lucide="mail"></i>
+              </div>
+              <div class="contact-method-details">
+                <h4>Email Me</h4>
+                <p>vijayhn273cs@gmail.com</p>
+              </div>
+            </a>
+
+            <a href="tel:+919597566839" class="contact-method-card">
+              <div class="contact-method-icon">
+                <i data-lucide="phone"></i>
+              </div>
+              <div class="contact-method-details">
+                <h4>Call Me</h4>
+                <p>+91 9597566839</p>
+              </div>
+            </a>
+
+            <a href="https://www.linkedin.com/in/vijayeprofile" target="_blank" rel="noopener noreferrer" class="contact-method-card">
+              <div class="contact-method-icon">
+                <i data-lucide="linkedin"></i>
+              </div>
+              <div class="contact-method-details">
+                <h4>LinkedIn</h4>
+                <p>linkedin.com/in/vijayeprofile</p>
+              </div>
+            </a>
+
+            <a href="https://github.com/VijayE2703" target="_blank" rel="noopener noreferrer" class="contact-method-card">
+              <div class="contact-method-icon">
+                <i data-lucide="github"></i>
+              </div>
+              <div class="contact-method-details">
+                <h4>GitHub Profile</h4>
+                <p>github.com/VijayE2703</p>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <!-- Glassmorphic Form -->
+        <div class="glass-card reveal">
+          <form id="contact-form" class="contact-form">
+            <div class="form-group-row">
+              <div class="form-group">
+                <label for="name">Your Name</label>
+                <input type="text" id="name" class="form-control" placeholder="John Doe" required>
+              </div>
+              <div class="form-group">
+                <label for="email">Your Email</label>
+                <input type="email" id="email" class="form-control" placeholder="john@example.com" required>
+              </div>
+            </div>
+            
+            <div class="form-group">
+              <label for="subject">Subject</label>
+              <input type="text" id="subject" class="form-control" placeholder="Inquiry about new project" required>
+            </div>
+
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" class="form-control" placeholder="Hi Vijay, I'd like to discuss a project..." required></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary" style="justify-content: center; width: 100%; margin-top: 10px;">
+              <span>Send Message</span>
+              <i data-lucide="send"></i>
+            </button>
+          </form>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Footer -->
-  <footer class="text-center">
-    <span>© 2026 Vijay</span>
+  <footer>
+    <div class="container footer-container">
+      <a href="#home" class="footer-logo">Vijay E</a>
+      <p class="footer-copy">© 2026 Vijay E. All rights reserved. Deployed via GitHub Pages.</p>
+      <div class="footer-links">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#projects">Work</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
   </footer>
 
-  <!-- Bootstrap JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-
 </body>
-
 </html>
